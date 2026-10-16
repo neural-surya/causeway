@@ -1,0 +1,10 @@
+services:
+  falkordb:
+    image: falkordb/falkordb:latest
+    ports:
+      - "6379:6379"   # FalkorDB (Redis protocol)
+      - "3100:3000"   # FalkorDB Browser (host 3100; 3000 is used by another project)
+    volumes:
+      - falkordb_data:/var/lib/falkordb/data
+volumes:
+  falkordb_data:

@@ -1,0 +1,15 @@
+[project]
+name = "causeway"
+version = "0.1.0"
+description = "Agents that investigate failing releases and explain every conclusion with a verifiable FalkorDB graph path"
+requires-python = ">=3.11"
+dependencies = ["falkordb"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+include = ["causeway*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

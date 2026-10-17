@@ -5,3 +5,4 @@ One line per commit.
 - README: hackathon link and tracks
 - docs/TASKS.md: compressed task list with status
 - schema: idempotent range + vector indexes per tenant graph, make schema
+- embed: deterministic hashed bag-of-words stand-in (384 dims)

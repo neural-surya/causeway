@@ -1,4 +1,4 @@
-.PHONY: up down install test
+.PHONY: up down install test schema
 PY := .venv/bin/python
 
 install:
@@ -13,3 +13,6 @@ down:
 
 test: install up
 	$(PY) -m pytest -q
+
+schema: install up
+	$(PY) -m causeway.graph.schema

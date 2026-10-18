@@ -1,4 +1,4 @@
-.PHONY: up down install test schema seed
+.PHONY: up down install test schema seed eval
 PY := .venv/bin/python
 
 install:
@@ -19,3 +19,6 @@ schema: install up
 
 seed: schema
 	$(PY) -m causeway.data.loader 42
+
+eval: install up
+	$(PY) -m eval.run_eval

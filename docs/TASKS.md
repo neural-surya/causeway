@@ -17,20 +17,20 @@ Deadline: Oct 18, 2026, 11:29 AM PDT. Status: [x] done, [ ] todo.
 - [x] 1.2 Schema and indexes (range + vector), idempotent `make schema`
 - [x] 1.3 Seeded generator, `make seed` for tenant_alpha and tenant_beta, ground_truth.json
 - [x] 1.4 Cypher query library (`.cypher` files), each tested against ground truth
-- [ ] 1.5 Eval harness skeleton + flat RAG baseline
+- [x] 1.5 Eval harness skeleton + flat RAG baseline
 
 ## Day 2: Tools, Track 3, Track 1
 - [ ] 2.1 MCP server with read tools and ToolCall audit trail
-- [ ] 2.2 Path verifier + test_path_faithfulness
+- [x] 2.2 Path verifier + test_path_faithfulness
 - [ ] 2.3 Combined agent loop (graph agents, no memory) scored on all incidents
 - [ ] 2.4 Company-brain Q&A with cited paths
 
 ## Day 3: Memory and coordination
-- [ ] 3.1 remember_episode + recall
-- [ ] 3.2 Belief supersession + test_supersession
+- [x] 3.1 remember_episode + recall
+- [x] 3.2 Belief supersession + test_supersession
 - [ ] 3.3 Triage / root-cause split with Task/Handoff + atomic claim, test_concurrency
 - [ ] 3.4 Memory-enabled run in chronological order, learning curve
-- [ ] 3.5 Tenant binding at MCP session level + test_tenant_isolation
+- [x] 3.5 Tenant binding at MCP session level + test_tenant_isolation
 
 ## Day 4: UI and polish
 - [ ] 4.1 Static page: chat stream + Cytoscape why-path

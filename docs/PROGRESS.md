@@ -9,3 +9,4 @@ One line per commit.
 - data: seeded world generator (specs, generate.py, ground truth) with tests
 - seed: loader + make seed for tenant_alpha/tenant_beta, graph tests vs ground truth
 - queries: runner (queries.py), shared test fixtures, incident_context
+- queries: trace_dependencies, dependents

@@ -6,3 +6,4 @@ One line per commit.
 - docs/TASKS.md: compressed task list with status
 - schema: idempotent range + vector indexes per tenant graph, make schema
 - embed: deterministic hashed bag-of-words stand-in (384 dims)
+- data: seeded world generator (specs, generate.py, ground truth) with tests

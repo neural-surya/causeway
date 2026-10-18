@@ -30,3 +30,4 @@ One line per commit.
 - qa: company-brain Q&A (6 intents, cited verified paths), 10 scripted questions tested
 - api/ui: /api/ask and Ask box reusing the claim list and why-path graph; docs updated
 - ui: fix highlighted nodes collapsing to slivers (separate node/edge highlight styles)
+- ui: spread out graph layout, smaller labels

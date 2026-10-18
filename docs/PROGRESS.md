@@ -8,3 +8,4 @@ One line per commit.
 - embed: deterministic hashed bag-of-words stand-in (384 dims)
 - data: seeded world generator (specs, generate.py, ground truth) with tests
 - seed: loader + make seed for tenant_alpha/tenant_beta, graph tests vs ground truth
+- queries: runner (queries.py), shared test fixtures, incident_context

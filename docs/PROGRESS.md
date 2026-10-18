@@ -21,3 +21,4 @@ One line per commit.
 - memory: remember_episode/recall/supersede_belief + test_supersession
 - session: tenant-bound Session + test_tenant_isolation
 - eval: flat RAG vs graph vs graph+memory, make eval, docs/RESULTS.md
+- tasks: Task/Handoff nodes, atomic claim_task, test_concurrency (50 parallel investigations)

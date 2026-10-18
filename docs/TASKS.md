@@ -28,7 +28,7 @@ Deadline: Oct 18, 2026, 11:29 AM PDT. Status: [x] done, [ ] todo.
 ## Day 3: Memory and coordination
 - [x] 3.1 remember_episode + recall
 - [x] 3.2 Belief supersession + test_supersession
-- [ ] 3.3 Triage / root-cause split with Task/Handoff + atomic claim, test_concurrency
+- [x] 3.3 Triage / root-cause split with Task/Handoff + atomic claim, test_concurrency
 - [ ] 3.4 Memory-enabled run in chronological order, learning curve
 - [x] 3.5 Tenant binding at MCP session level + test_tenant_isolation
 

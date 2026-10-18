@@ -14,3 +14,4 @@ One line per commit.
 - queries: service_features (blast radius, flakiness)
 - queries: who_knows (owners + experts)
 - queries: decision_trace (supersession chain)
+- queries: similar_incidents (neighbourhood Jaccard, earlier only)

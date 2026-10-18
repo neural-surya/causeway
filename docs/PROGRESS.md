@@ -13,3 +13,4 @@ One line per commit.
 - queries: recent_changes (as_of bounded, deduped, evidence path)
 - queries: service_features (blast radius, flakiness)
 - queries: who_knows (owners + experts)
+- queries: decision_trace (supersession chain)

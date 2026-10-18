@@ -23,3 +23,29 @@
 - Loader: wipes the tenant graph, runs `ensure_schema`, loads nodes then edges with `UNWIND $rows`. Labels/relationship types are validated before going into the query text (they cannot be parameters). Docs get embeddings from the hashed stand-in.
 - FalkorDB finding: on this build, a variable-length pattern with min == max (`*2`, `*2..2`) returns 0 rows. Use `*1..N` plus `WHERE length(p) = $h`. Variable-length matches return every path, not only the shortest (api-gateway to fraud gives lengths 2 and 3).
 - The server query TIMEOUT defaults to 1000 ms; keep it in mind for the concurrency test.
+
+## 1.4 Query library
+- One `.cypher` file per query with a header comment; `queries.run` (ro_query) / `queries.write` load them by name and pass parameters only.
+- Time-aware queries take `$as_of` (the incident time), so an investigation cannot see changes made after the failure.
+- Variable-length matches return every path; `recent_changes` keeps the shortest path per commit, `trace_dependencies` leaves de-duplication to the caller.
+- `similar_incidents` uses AFFECTED only (no root causes in the seeded graph), Jaccard over "service + dependencies within 2 hops", earlier incidents only.
+
+## Verifier
+- A claim is {text, path_ids, entities}. Supported iff path has >= 2 nodes, every consecutive pair is joined by a real edge (`edge_between`), and every named entity is on the path. It only asks FalkorDB; an agent cannot argue past it.
+
+## rank_suspects
+- score = recency (half-life 24h) x proximity (1/(1+hops)) x centrality (1+ln(1+transitive dependents)) x risk (x2 if message has a risky word) x memory boost.
+- Memory boost: cosine of the candidate's message against recalled culprit messages; only similarity > 0.5 boosts. Weights are hand-set, not tuned on the 12 incidents.
+
+## Memory
+- `remember_episode` MERGEs Episode, Belief and edges by id, so retries/concurrent writers cannot duplicate; it also writes `Incident-CAUSED_BY->Commit` (the confirmed answer becomes a fact only now).
+- `supersede_belief` sets old.valid_to, creates the new belief with SUPERSEDES(reason) and copies ABOUT/SUPPORTED_BY links; `recall` returns only `valid_to IS NULL` unless history is requested. Two statements are not one transaction; the guard `old.valid_to IS NULL` makes a repeat a no-op.
+
+## Coordination
+- `claim_task` checks status and sets it in one write query; FalkorDB runs writes to one graph serially, so only one racer matches. Verified with 20 racers and with 50 parallel investigations.
+
+## Tenant isolation
+- The tenant is chosen when a `Session` (or the MCP server process) is created. No tool has a tenant parameter. Beta sessions cannot reach alpha data; tested with crafted alpha ids, injection-style text, and memory written in alpha.
+
+## Eval
+- Three systems, same 12 incidents, scored against ground_truth.json. graph+mem runs chronologically and writes each resolved incident back. Results: docs/RESULTS.md.

@@ -18,3 +18,5 @@ One line per commit.
 - queries: entry_points (vector), service_for_test
 - verifier: deterministic path verifier + test_path_faithfulness
 - ranking: rank_suspects (recency x proximity x centrality x risk, optional memory boost)
+- memory: remember_episode/recall/supersede_belief + test_supersession
+- session: tenant-bound Session + test_tenant_isolation

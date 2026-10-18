@@ -32,3 +32,4 @@ One line per commit.
 - ui: fix highlighted nodes collapsing to slivers (separate node/edge highlight styles)
 - ui: spread out graph layout, smaller labels
 - ui: balance graph spacing and text size
+- README: steps to test

@@ -42,6 +42,29 @@ python -m causeway.mcp_server   # the tools over MCP (stdio); tenant fixed by CA
 ```
 FalkorDB Browser: http://localhost:3100.
 
+## Try it yourself (about 5 minutes)
+Run `make demo`, open http://127.0.0.1:8000 (Docker must be running; no virtualenv activation needed).
+
+1. **Investigation with verified claims.** Choose `inc-02`, untick "use memory", click **Investigate**. Watch triage
+   open a task and hand off, then root-cause claim it. Every claim shows "verified"; click one and its why-path
+   highlights in the graph. Without memory the true culprit (`com-044`) ranks about 4th, because the data plants
+   newer decoy commits.
+2. **Memory.** Click **Confirm root cause & remember**. Choose `inc-06` (same family, later), tick "use memory",
+   click **Investigate**. The stream shows the recalled belief, and in *Ranked suspects* the true culprit
+   `com-111` is first with a "memory x" of about 9. Untick memory and re-run: the column returns to 1.
+3. **Company-brain Q&A.** Type into the Ask box and click each claim to see its path:
+   - `Who owns payments?`
+   - `Who knows about user-profile?`
+   - `What does the api-gateway depend on?`
+   - `What depends on ledger?`
+   - `Which tests cover orders?`
+   - `Why do we retry the way we do in payments?` (current policy plus the two it superseded)
+   - `Why did we choose exponential backoff with jitter?` (reported as superseded)
+   - `What is the weather in Paris?` (answers "I can't answer that", no claims)
+4. **Tests and numbers.** `make test` should end with `100 passed`. `make eval` reprints the results table above.
+5. **The graph is required.** `docker compose stop falkordb` and reload the page: it stops working.
+   `docker compose start falkordb` restores it. `make seed` resets memory.
+
 ## Architecture
 ```mermaid
 graph TD

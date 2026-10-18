@@ -27,3 +27,4 @@ One line per commit.
 - mcp: MCP server exposing 9 tools with evidence paths, tenant bound by env
 - docs: README, GRAPH_MODEL, AI_DISCLOSURE, design notes
 - docs/TASKS.md: final status
+- qa: company-brain Q&A (6 intents, cited verified paths), 10 scripted questions tested

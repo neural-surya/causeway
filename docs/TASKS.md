@@ -23,7 +23,7 @@ Deadline: Oct 18, 2026, 11:29 AM PDT. Status: [x] done, [ ] todo.
 - [x] 2.1 MCP server with read tools and ToolCall audit trail
 - [x] 2.2 Path verifier + test_path_faithfulness
 - [x] 2.3 Graph agents (no memory) scored on all incidents (deterministic agents, no LLM)
-- [ ] 2.4 Company-brain Q&A with cited paths (not done: who_knows/decision_trace exist as tools, no Q&A mode)
+- [x] 2.4 Company-brain Q&A with cited paths (deterministic intents, 10 scripted questions verify)
 
 ## Day 3: Memory and coordination
 - [x] 3.1 remember_episode + recall

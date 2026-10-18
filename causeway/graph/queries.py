@@ -23,3 +23,10 @@ def run(graph: Graph, name: str, **params) -> list[dict]:
     res = graph.ro_query(load(name), params)
     cols = [h[1] for h in res.header]
     return [dict(zip(cols, row)) for row in res.result_set]
+
+
+def write(graph: Graph, name: str, **params) -> list[dict]:
+    """Same as run() but allowed to modify the graph (memory writes)."""
+    res = graph.query(load(name), params)
+    cols = [h[1] for h in res.header]
+    return [dict(zip(cols, row)) for row in res.result_set]

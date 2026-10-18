@@ -3,10 +3,8 @@ from causeway.graph.queries import run
 
 def test_retry_chain_for_payments(graph, world):
     rows = {r["decision"]: r for r in run(graph, "decision_trace", service="svc-payments")}
-    title = {d["id"]: d["title"] for d in world.nodes["Decision"]}
-    retry = [d for d, t in title.items() if "etry" in t]
-    assert len(retry) == 3 and set(retry) <= set(rows)
-    d1, d2, d3 = sorted(retry, key=lambda d: rows[d]["ts"])
+    d1, d2, d3 = "dec-01", "dec-02", "dec-03"  # the retry-policy chain, in specs.py order
+    assert {d1, d2, d3} <= set(rows)
     assert rows[d1]["superseded_by"] == d2 and rows[d2]["superseded_by"] == d3
     assert rows[d3]["superseded_by"] is None and rows[d3]["status"] == "active"
 

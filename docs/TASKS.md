@@ -33,7 +33,7 @@ Deadline: Oct 18, 2026, 11:29 AM PDT. Status: [x] done, [ ] todo.
 - [x] 3.5 Tenant binding at MCP session level + test_tenant_isolation
 
 ## Day 4: UI and polish
-- [ ] 4.1 Static page: chat stream + Cytoscape why-path
+- [x] 4.1 Static page: chat stream + Cytoscape why-path
 - [ ] 4.2 Fix worst eval misses
 - [ ] 4.3 Full eval, auto-generated docs/RESULTS.md
 - [ ] 4.4 README: graph model, Cypher list, results table

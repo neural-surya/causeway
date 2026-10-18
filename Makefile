@@ -1,4 +1,4 @@
-.PHONY: up down install test schema seed eval
+.PHONY: up down install test schema seed eval demo
 PY := .venv/bin/python
 
 install:
@@ -22,3 +22,7 @@ seed: schema
 
 eval: install up
 	$(PY) -m eval.run_eval
+
+demo: seed
+	@echo "Open http://127.0.0.1:8000"
+	$(PY) -m causeway.api

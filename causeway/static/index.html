@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Causeway</title>
+<style>
+  :root { --bg:#f6f7f9; --panel:#fff; --ink:#1b1f24; --mute:#6b7380; --line:#dfe3e8; --acc:#2457d6;
+          --ok:#1a7f4b; --bad:#b3261e; --tri:#7a4fd6; --rc:#0c7c8c; --hl:#f59e0b; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+          --bg:#101317; --panel:#181c22; --ink:#e7eaee; --mute:#8d97a5; --line:#2a313a; --acc:#6e93ff;
+          --ok:#4cc38a; --bad:#ff7b72; --tri:#b595ff; --rc:#4cc7d6; --hl:#fbbf24; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:14px/1.45 system-ui,sans-serif; }
+  header { display:flex; flex-wrap:wrap; gap:.75rem; align-items:center; padding:.75rem 1rem; background:var(--panel); border-bottom:1px solid var(--line); }
+  header h1 { font-size:1.05rem; margin:0 .5rem 0 0; }
+  header .sub { color:var(--mute); }
+  select, button { font:inherit; padding:.4rem .6rem; border:1px solid var(--line); border-radius:6px; background:var(--panel); color:var(--ink); }
+  button.primary { background:var(--acc); color:#fff; border-color:var(--acc); cursor:pointer; }
+  button { cursor:pointer; }
+  main { display:grid; grid-template-columns:minmax(300px,1fr) minmax(300px,1.2fr); gap:1rem; padding:1rem; }
+  @media (max-width:800px) { main { grid-template-columns:1fr; } }
+  .panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:.75rem 1rem; }
+  .panel h2 { font-size:.8rem; text-transform:uppercase; letter-spacing:.05em; color:var(--mute); margin:.1rem 0 .6rem; }
+  #stream { max-height:60vh; overflow:auto; }
+  .step { padding:.35rem 0; border-bottom:1px dashed var(--line); }
+  .tag { display:inline-block; font-size:.72rem; padding:0 .45rem; border-radius:99px; color:#fff; margin-right:.4rem; }
+  .tag.triage { background:var(--tri); } .tag.root-cause { background:var(--rc); }
+  .tool { font-family:ui-monospace,monospace; font-size:.85rem; }
+  .claim { padding:.5rem .6rem; border:1px solid var(--line); border-radius:6px; margin:.4rem 0; cursor:pointer; }
+  .claim:hover, .claim.on { border-color:var(--hl); background:color-mix(in srgb, var(--hl) 12%, transparent); }
+  .ok { color:var(--ok); font-weight:600; } .bad { color:var(--bad); font-weight:600; }
+  #cy { height:420px; border:1px solid var(--line); border-radius:6px; }
+  .mute { color:var(--mute); } .muted-small { font-size:.8rem; color:var(--mute); }
+  table { border-collapse:collapse; width:100%; font-size:.85rem; } td,th { text-align:left; padding:.25rem .4rem; border-bottom:1px solid var(--line); }
+  .wrap { overflow-x:auto; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Causeway</h1><span class="sub">tenant: alpha (Northwind Payments)</span>
+  <select id="incident" aria-label="Incident"></select>
+  <label><input type="checkbox" id="mem" checked> use memory</label>
+  <button class="primary" id="go">Investigate</button>
+  <button id="resolve" title="The team confirms the real root cause, so memory can learn it">Confirm root cause &amp; remember</button>
+  <span id="status" class="muted-small"></span>
+</header>
+<main>
+  <section class="panel">
+    <h2>Investigation</h2>
+    <p id="summary" class="mute">Pick an incident and click Investigate.</p>
+    <div id="stream"></div>
+  </section>
+  <section>
+    <div class="panel">
+      <h2>Why-path (click a claim)</h2>
+      <div id="cy"></div>
+      <div id="claims"></div>
+    </div>
+    <div class="panel" style="margin-top:1rem">
+      <h2>Ranked suspects</h2>
+      <div class="wrap"><table id="suspects"></table></div>
+    </div>
+  </section>
+</main>
+<script src="/static/cytoscape.min.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+let cy, last;
+const esc = s => String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const COLORS = {Service:'#2457d6', Commit:'#d6612a', Person:'#7a4fd6', Team:'#0c7c8c', Incident:'#b3261e', Doc:'#6b7380', Decision:'#1a7f4b'};
+
+async function api(path, body) {
+  const r = await fetch(path, body ? {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)} : {});
+  if (!r.ok) throw new Error(path + ' -> ' + r.status);
+  return r.json();
+}
+async function loadIncidents() {
+  const rows = await api('/api/incidents');
+  $('incident').innerHTML = rows.map(r => `<option value="${r.id}">${r.id} · ${esc(r.title)}${r.remembered ? ' ✓ remembered' : ''}</option>`).join('');
+}
+function drawGraph(el, highlight) {
+  cy = cytoscape({ container:$('cy'), elements:[...el.nodes, ...el.edges], layout:{name:'cose', animate:false, padding:20},
+    style:[
+      {selector:'node', style:{label:'data(name)', 'font-size':9, 'text-wrap':'ellipsis', 'text-max-width':110, 'text-valign':'bottom', 'text-margin-y':4,
+        'background-color': n => COLORS[n.data('label')] || '#888', width:22, height:22, color:getComputedStyle(document.body).color}},
+      {selector:'edge', style:{width:1.5, 'line-color':'#aab', 'target-arrow-color':'#aab', 'target-arrow-shape':'triangle', 'curve-style':'bezier', label:'data(label)', 'font-size':7, color:'#889'}},
+      {selector:'.hl', style:{'line-color':'#f59e0b','target-arrow-color':'#f59e0b', width:4, 'border-width':3, 'border-color':'#f59e0b'}},
+      {selector:'.dim', style:{opacity:.18}} ]});
+  if (highlight) hl(highlight);
+}
+function hl(path) {
+  cy.elements().removeClass('hl dim');
+  const ids = new Set(path), eids = new Set();
+  path.forEach((a,i) => { if (i) { eids.add(path[i-1]+'>'+a); eids.add(a+'>'+path[i-1]); } });
+  cy.elements().addClass('dim');
+  cy.nodes().filter(n => ids.has(n.id())).removeClass('dim').addClass('hl');
+  cy.edges().filter(e => eids.has(e.id())).removeClass('dim').addClass('hl');
+}
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+$('go').onclick = async () => {
+  $('go').disabled = true; $('status').textContent = 'investigating...'; $('stream').innerHTML = '';
+  try {
+    const r = last = await api('/api/investigate', {incident:$('incident').value, memory:$('mem').checked});
+    $('summary').textContent = r.summary;
+    for (const s of r.steps) {
+      $('stream').insertAdjacentHTML('beforeend',
+        `<div class="step"><span class="tag ${s.agent}">${s.agent}</span><span class="tool">${s.tool}</span><br><span class="mute">${esc(s.summary)}</span></div>`);
+      $('stream').scrollTop = 1e9; await sleep(180);
+    }
+    $('claims').innerHTML = r.claims.map((c,i) => `<div class="claim" data-i="${i}">
+        <span class="${c.verified ? 'ok':'bad'}">${c.verified ? '✓ verified' : '✗ unsupported'}</span> ${esc(c.text)}
+        <div class="muted-small">${c.path_ids.map(esc).join(' → ')}${c.reason ? ' · ' + esc(c.reason) : ''}</div></div>`).join('');
+    drawGraph(r.elements, r.claims[0] && r.claims[0].path_ids);
+    document.querySelectorAll('.claim').forEach(el => el.onclick = () => {
+      document.querySelectorAll('.claim').forEach(x => x.classList.remove('on')); el.classList.add('on'); hl(r.claims[el.dataset.i].path_ids); });
+    $('suspects').innerHTML = '<tr><th>commit</th><th>message</th><th>service</th><th>hops</th><th>score</th><th>memory ×</th></tr>' +
+      r.suspects.map(s => `<tr><td>${s.commit}</td><td>${esc(s.msg)}</td><td>${s.service}</td><td>${s.hops}</td><td>${s.score}</td><td>${s.memory_boost}</td></tr>`).join('');
+    $('status').textContent = '';
+  } catch (e) { $('status').textContent = String(e); }
+  $('go').disabled = false;
+};
+$('resolve').onclick = async () => {
+  await api('/api/resolve', {incident:$('incident').value});
+  $('status').textContent = 'memory updated for ' + $('incident').value;
+  const v = $('incident').value; await loadIncidents(); $('incident').value = v;
+};
+loadIncidents();
+</script>
+</body>
+</html>

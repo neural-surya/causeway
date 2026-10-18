@@ -23,3 +23,4 @@ One line per commit.
 - eval: flat RAG vs graph vs graph+memory, make eval, docs/RESULTS.md
 - tasks: Task/Handoff nodes, atomic claim_task, test_concurrency (50 parallel investigations)
 - investigate: triage + root-cause agents over Task/Handoff, verified claims, why-path elements
+- api+ui: FastAPI endpoints, single page with chat stream and Cytoscape why-path, make demo

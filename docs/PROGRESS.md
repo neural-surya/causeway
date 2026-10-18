@@ -10,3 +10,4 @@ One line per commit.
 - seed: loader + make seed for tenant_alpha/tenant_beta, graph tests vs ground truth
 - queries: runner (queries.py), shared test fixtures, incident_context
 - queries: trace_dependencies, dependents
+- queries: recent_changes (as_of bounded, deduped, evidence path)

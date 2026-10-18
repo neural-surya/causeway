@@ -11,3 +11,4 @@ One line per commit.
 - queries: runner (queries.py), shared test fixtures, incident_context
 - queries: trace_dependencies, dependents
 - queries: recent_changes (as_of bounded, deduped, evidence path)
+- queries: service_features (blast radius, flakiness)

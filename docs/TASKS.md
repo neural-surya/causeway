@@ -20,7 +20,7 @@ Deadline: Oct 18, 2026, 11:29 AM PDT. Status: [x] done, [ ] todo.
 - [x] 1.5 Eval harness skeleton + flat RAG baseline
 
 ## Day 2: Tools, Track 3, Track 1
-- [ ] 2.1 MCP server with read tools and ToolCall audit trail
+- [x] 2.1 MCP server with read tools and ToolCall audit trail
 - [x] 2.2 Path verifier + test_path_faithfulness
 - [ ] 2.3 Combined agent loop (graph agents, no memory) scored on all incidents
 - [ ] 2.4 Company-brain Q&A with cited paths
@@ -29,13 +29,13 @@ Deadline: Oct 18, 2026, 11:29 AM PDT. Status: [x] done, [ ] todo.
 - [x] 3.1 remember_episode + recall
 - [x] 3.2 Belief supersession + test_supersession
 - [x] 3.3 Triage / root-cause split with Task/Handoff + atomic claim, test_concurrency
-- [ ] 3.4 Memory-enabled run in chronological order, learning curve
+- [x] 3.4 Memory-enabled run in chronological order, learning curve
 - [x] 3.5 Tenant binding at MCP session level + test_tenant_isolation
 
 ## Day 4: UI and polish
 - [x] 4.1 Static page: chat stream + Cytoscape why-path
 - [ ] 4.2 Fix worst eval misses
-- [ ] 4.3 Full eval, auto-generated docs/RESULTS.md
+- [x] 4.3 Full eval, auto-generated docs/RESULTS.md
 - [ ] 4.4 README: graph model, Cypher list, results table
 
 ## Day 5: Ship

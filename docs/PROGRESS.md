@@ -24,3 +24,4 @@ One line per commit.
 - tasks: Task/Handoff nodes, atomic claim_task, test_concurrency (50 parallel investigations)
 - investigate: triage + root-cause agents over Task/Handoff, verified claims, why-path elements
 - api+ui: FastAPI endpoints, single page with chat stream and Cytoscape why-path, make demo
+- mcp: MCP server exposing 9 tools with evidence paths, tenant bound by env

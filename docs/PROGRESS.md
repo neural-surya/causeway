@@ -15,3 +15,4 @@ One line per commit.
 - queries: who_knows (owners + experts)
 - queries: decision_trace (supersession chain)
 - queries: similar_incidents (neighbourhood Jaccard, earlier only)
+- queries: entry_points (vector), service_for_test

@@ -16,7 +16,7 @@ Deadline: Oct 18, 2026, 11:29 AM PDT. Status: [x] done, [ ] todo.
 - [x] 1.1 FalkorDB in Docker, Python client smoke test
 - [x] 1.2 Schema and indexes (range + vector), idempotent `make schema`
 - [x] 1.3 Seeded generator, `make seed` for tenant_alpha and tenant_beta, ground_truth.json
-- [ ] 1.4 Cypher query library (`.cypher` files), each tested against ground truth
+- [x] 1.4 Cypher query library (`.cypher` files), each tested against ground truth
 - [ ] 1.5 Eval harness skeleton + flat RAG baseline
 
 ## Day 2: Tools, Track 3, Track 1

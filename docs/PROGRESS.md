@@ -31,3 +31,4 @@ One line per commit.
 - api/ui: /api/ask and Ask box reusing the claim list and why-path graph; docs updated
 - ui: fix highlighted nodes collapsing to slivers (separate node/edge highlight styles)
 - ui: spread out graph layout, smaller labels
+- ui: balance graph spacing and text size

@@ -95,9 +95,10 @@ function drawGraph(el, highlight) {
     style:[
       {selector:'node', style:{label:'data(name)', 'font-size':9, 'text-wrap':'ellipsis', 'text-max-width':110, 'text-valign':'bottom', 'text-margin-y':4,
         'background-color': n => COLORS[n.data('label')] || '#888', width:22, height:22, color:getComputedStyle(document.body).color}},
-      {selector:'edge', style:{width:1.5, 'line-color':'#aab', 'target-arrow-color':'#aab', 'target-arrow-shape':'triangle', 'curve-style':'bezier', label:'data(label)', 'font-size':7, color:'#889'}},
-      {selector:'.hl', style:{'line-color':'#f59e0b','target-arrow-color':'#f59e0b', width:4, 'border-width':3, 'border-color':'#f59e0b'}},
-      {selector:'.dim', style:{opacity:.18}} ]});
+      {selector:'edge', style:{width:1.5, 'line-color':'#aab', 'target-arrow-color':'#aab', 'target-arrow-shape':'triangle', 'curve-style':'bezier', label:'data(label)', 'font-size':7, color:'#889', 'text-rotation':'autorotate', 'text-margin-y':-6}},
+      {selector:'node.hl', style:{width:28, height:28, 'border-width':4, 'border-color':'#f59e0b'}},
+      {selector:'edge.hl', style:{'line-color':'#f59e0b','target-arrow-color':'#f59e0b', width:4}},
+      {selector:'.dim', style:{opacity:.4}} ]});
   if (highlight) hl(highlight);
 }
 function hl(path) {

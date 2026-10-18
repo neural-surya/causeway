@@ -7,7 +7,7 @@ This project was built with **Claude Code (Claude Sonnet 5.5)** as a coding assi
 Essentially all code and docs in the repo, at the author's direction: the Docker/Make scaffold; graph client,
 schema and indexes; the synthetic-world generator and loader; every `.cypher` query; the path verifier; the
 suspect ranker; memory (episodes, beliefs, supersession); Task/Handoff coordination; the two deterministic agents;
-the MCP server; the FastAPI app and static page; the eval harness; all tests; README and docs.
+company-brain Q&A; the MCP server; the FastAPI app and static page; the eval harness; all tests; README and docs.
 The vendored `causeway/static/cytoscape.min.js` is the unmodified Cytoscape.js 3.30.2 release.
 
 ## What the human did

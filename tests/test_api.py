@@ -33,3 +33,11 @@ def test_resolve_marks_incident_remembered(client):
     assert client.post("/api/resolve", json={"incident": "inc-02"}).json()["remembered"] == "inc-02"
     row = next(r for r in client.get("/api/incidents").json() if r["id"] == "inc-02")
     assert row["remembered"] is True
+
+
+def test_ask_endpoint_returns_verified_cited_answer(client):
+    r = client.post("/api/ask", json={"question": "Who owns payments?"}).json()
+    assert r["intent"] == "owners" and r["claims"] and all(c["verified"] for c in r["claims"])
+    assert r["elements"]["nodes"]
+    miss = client.post("/api/ask", json={"question": "What is the weather in Paris?"}).json()
+    assert miss["claims"] == []

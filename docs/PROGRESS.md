@@ -28,3 +28,4 @@ One line per commit.
 - docs: README, GRAPH_MODEL, AI_DISCLOSURE, design notes
 - docs/TASKS.md: final status
 - qa: company-brain Q&A (6 intents, cited verified paths), 10 scripted questions tested
+- api/ui: /api/ask and Ask box reusing the claim list and why-path graph; docs updated

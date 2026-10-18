@@ -49,3 +49,8 @@
 
 ## Eval
 - Three systems, same 12 incidents, scored against ground_truth.json. graph+mem runs chronologically and writes each resolved incident back. Results: docs/RESULTS.md.
+
+## 2.4 Company-brain Q&A
+- `qa.ask` routes by keywords to one of six intents (owners, experts, dependencies, dependents, tests, decisions), finds the service in the question by name, and builds the answer from existing graph queries. Every claim gets a path and goes through the verifier; unroutable questions return no claims instead of a guess.
+- Decisions: `find_decisions` returns all decisions with their document text; the question's words (minus stopwords and the service name, crudely stemmed) are matched against title + body. Ties go to the newest decision, so "why do we retry..." leads with the current policy; the chain is then walked back and forward through `SUPERSEDES`. If the best match is itself superseded, the answer says so.
+- "Dependencies" vs "dependents": a "does/do" in the question means what the service depends on; otherwise what depends on it. Only direct (1-hop) relations are reported, so the claims are single edges.

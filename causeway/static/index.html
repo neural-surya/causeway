@@ -46,10 +46,21 @@
   <span id="status" class="muted-small"></span>
 </header>
 <main>
-  <section class="panel">
+  <section>
+  <div class="panel" style="margin-bottom:1rem">
+    <h2>Ask the company brain</h2>
+    <form id="askform" style="display:flex; gap:.5rem; flex-wrap:wrap">
+      <input id="q" style="flex:1; min-width:200px; font:inherit; padding:.4rem .6rem; border:1px solid var(--line); border-radius:6px; background:var(--panel); color:var(--ink)"
+             placeholder="e.g. Who owns payments? Why do we retry the way we do in payments?" aria-label="Question">
+      <button class="primary" type="submit">Ask</button>
+    </form>
+    <p id="answer" class="mute" style="margin:.6rem 0 0"></p>
+  </div>
+  <div class="panel">
     <h2>Investigation</h2>
     <p id="summary" class="mute">Pick an incident and click Investigate.</p>
     <div id="stream"></div>
+  </div>
   </section>
   <section>
     <div class="panel">
@@ -97,6 +108,14 @@ function hl(path) {
   cy.nodes().filter(n => ids.has(n.id())).removeClass('dim').addClass('hl');
   cy.edges().filter(e => eids.has(e.id())).removeClass('dim').addClass('hl');
 }
+function showClaims(claims, elements) {
+  $('claims').innerHTML = claims.map((c,i) => `<div class="claim" data-i="${i}">
+      <span class="${c.verified ? 'ok':'bad'}">${c.verified ? '✓ verified' : '✗ unsupported'}</span> ${esc(c.text)}
+      <div class="muted-small">${c.path_ids.map(esc).join(' → ')}${c.reason ? ' · ' + esc(c.reason) : ''}</div></div>`).join('');
+  drawGraph(elements, claims[0] && claims[0].path_ids);
+  document.querySelectorAll('.claim').forEach(el => el.onclick = () => {
+    document.querySelectorAll('.claim').forEach(x => x.classList.remove('on')); el.classList.add('on'); hl(claims[el.dataset.i].path_ids); });
+}
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
 $('go').onclick = async () => {
@@ -109,12 +128,7 @@ $('go').onclick = async () => {
         `<div class="step"><span class="tag ${s.agent}">${s.agent}</span><span class="tool">${s.tool}</span><br><span class="mute">${esc(s.summary)}</span></div>`);
       $('stream').scrollTop = 1e9; await sleep(180);
     }
-    $('claims').innerHTML = r.claims.map((c,i) => `<div class="claim" data-i="${i}">
-        <span class="${c.verified ? 'ok':'bad'}">${c.verified ? '✓ verified' : '✗ unsupported'}</span> ${esc(c.text)}
-        <div class="muted-small">${c.path_ids.map(esc).join(' → ')}${c.reason ? ' · ' + esc(c.reason) : ''}</div></div>`).join('');
-    drawGraph(r.elements, r.claims[0] && r.claims[0].path_ids);
-    document.querySelectorAll('.claim').forEach(el => el.onclick = () => {
-      document.querySelectorAll('.claim').forEach(x => x.classList.remove('on')); el.classList.add('on'); hl(r.claims[el.dataset.i].path_ids); });
+    showClaims(r.claims, r.elements);
     $('suspects').innerHTML = '<tr><th>commit</th><th>message</th><th>service</th><th>hops</th><th>score</th><th>memory ×</th></tr>' +
       r.suspects.map(s => `<tr><td>${s.commit}</td><td>${esc(s.msg)}</td><td>${s.service}</td><td>${s.hops}</td><td>${s.score}</td><td>${s.memory_boost}</td></tr>`).join('');
     $('status').textContent = '';
@@ -125,6 +139,18 @@ $('resolve').onclick = async () => {
   await api('/api/resolve', {incident:$('incident').value});
   $('status').textContent = 'memory updated for ' + $('incident').value;
   const v = $('incident').value; await loadIncidents(); $('incident').value = v;
+};
+$('askform').onsubmit = async ev => {
+  ev.preventDefault();
+  const q = $('q').value.trim(); if (!q) return;
+  $('status').textContent = 'asking...';
+  try {
+    const r = await api('/api/ask', {question:q});
+    $('answer').textContent = r.answer;
+    $('suspects').innerHTML = '';
+    showClaims(r.claims, r.elements);
+    $('status').textContent = '';
+  } catch (e) { $('status').textContent = String(e); }
 };
 loadIncidents();
 </script>

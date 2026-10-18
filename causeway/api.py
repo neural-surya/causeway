@@ -10,6 +10,7 @@ from pydantic import BaseModel
 
 from causeway.graph.queries import run
 from causeway.investigate import investigate, resolve
+from causeway.qa import ask
 from causeway.session import Session
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -25,6 +26,10 @@ def _truth():
 class Investigate(BaseModel):
     incident: str
     memory: bool = True
+
+
+class Ask(BaseModel):
+    question: str
 
 
 class Resolve(BaseModel):
@@ -46,6 +51,11 @@ def do_investigate(req: Investigate):
     if not run(session.graph, "incident_context", incident=req.incident):
         raise HTTPException(404, "unknown incident")
     return investigate(session, req.incident, req.memory)
+
+
+@app.post("/api/ask")
+def do_ask(req: Ask):
+    return ask(session, req.question[:300])
 
 
 @app.post("/api/resolve")

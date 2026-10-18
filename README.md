@@ -20,6 +20,12 @@ The UI shows the agent steps, the ranked suspects, and the why-path in a Cytosca
 highlight it). "Confirm root cause" writes the episode to memory so the next incident of the same family is
 ranked better.
 
+**Company-brain Q&A.** The same graph answers plain-English questions with cited, verified paths: *Who owns
+payments? Who knows about user-profile? What depends on ledger? Which tests cover orders? Why do we retry the way
+we do in payments?* (the last walks the decision's `SUPERSEDES` chain and says which policy is current). A question
+it cannot route gets "I can't answer that" and no claims. Routing is keyword rules, not an LLM
+([`causeway/qa.py`](causeway/qa.py)).
+
 ## Why a graph
 FalkorDB is the only datastore; without it the product does not work (`tests/test_graph_dependence.py`).
 The answer to "what broke checkout?" is a *path*: failing service → dependency → changed service ← commit ← author.
@@ -30,7 +36,7 @@ for a claim is literally a list of node ids that can be re-checked.
 Needs Docker and Python 3.11+.
 ```
 make demo        # starts FalkorDB, creates indexes, seeds two tenants, serves http://127.0.0.1:8000
-make test        # 86 tests (graph queries vs ground truth, verifier, memory, isolation, concurrency)
+make test        # 100 tests (graph queries vs ground truth, verifier, memory, isolation, concurrency)
 make eval        # flat RAG vs graph vs graph+memory, writes docs/RESULTS.md
 python -m causeway.mcp_server   # the tools over MCP (stdio); tenant fixed by CAUSEWAY_TENANT
 ```
@@ -110,8 +116,8 @@ Real numbers from `make eval` on 12 seeded incidents (4 recurring families × 3)
 `tests/` covers: **path faithfulness** (fabricated paths rejected), **tenant isolation** (a beta session cannot
 see alpha through any tool; no tool accepts a tenant argument), **concurrency** (20 racers claim one task: exactly
 one wins; 50 parallel investigations with memory writes: no lost writes, no duplicate claims; p50 3.3 ms,
-p95 6.9 ms per call), **supersession** (history kept, `recall` returns the current belief), and every query
-against ground truth.
+p95 6.9 ms per call), **supersession** (history kept, `recall` returns the current belief), **Q&A** (10 scripted questions, every
+answer's claims verify), and every query against ground truth.
 
 ## Honest limitations
 - **The agents are deterministic code, not LLM agents.** There are no Anthropic/LLM calls. The two "agents"
@@ -127,7 +133,8 @@ against ground truth.
   partly the stand-in. It is fair in being given the same 72-hour commit window, but not a best-effort RAG.
 - Embeddings for the graph's vector index use the same stand-in (no model download).
 - No hosted deployment; local setup only. The UI was syntax-checked and its API tested, but not exercised in
-  a browser during development.
+  a browser during development (including the Q&A box).
+- Q&A understands a fixed set of question shapes (six intents); it is not open-ended language understanding.
 
 ## Repo map
 `causeway/` (graph, data generator, ranking, memory, tasks, investigate, MCP server, API, static UI) ·

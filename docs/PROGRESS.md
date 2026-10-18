@@ -17,3 +17,4 @@ One line per commit.
 - queries: similar_incidents (neighbourhood Jaccard, earlier only)
 - queries: entry_points (vector), service_for_test
 - verifier: deterministic path verifier + test_path_faithfulness
+- ranking: rank_suspects (recency x proximity x centrality x risk, optional memory boost)

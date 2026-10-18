@@ -1,0 +1,217 @@
+{
+ "company": "Northwind Payments",
+ "incidents": [
+  {
+   "failing_service": "svc-payments",
+   "failing_test": "test-010",
+   "family": "retry",
+   "hops": 0,
+   "incident": "inc-01",
+   "occurrence": 1,
+   "pattern": "retry policy change causes timeouts and duplicate requests",
+   "root_cause_commit": "com-019",
+   "root_cause_service": "svc-payments",
+   "tier": "easy",
+   "ts": 1777593600,
+   "why_path": [
+    "svc-payments"
+   ]
+  },
+  {
+   "failing_service": "svc-api-gateway",
+   "failing_test": "test-002",
+   "family": "schema",
+   "hops": 2,
+   "incident": "inc-02",
+   "occurrence": 1,
+   "pattern": "schema migration upstream breaks a downstream consumer",
+   "root_cause_commit": "com-044",
+   "root_cause_service": "svc-fraud",
+   "tier": "medium",
+   "ts": 1778803200,
+   "why_path": [
+    "svc-api-gateway",
+    "svc-payments",
+    "svc-fraud"
+   ]
+  },
+  {
+   "failing_service": "svc-orders",
+   "failing_test": "test-008",
+   "family": "config",
+   "hops": 2,
+   "incident": "inc-03",
+   "occurrence": 1,
+   "pattern": "config default change upstream shows up as latency in an unrelated service",
+   "root_cause_commit": "com-063",
+   "root_cause_service": "svc-auth",
+   "tier": "hard",
+   "ts": 1779847200,
+   "why_path": [
+    "svc-orders",
+    "svc-payments",
+    "svc-auth"
+   ]
+  },
+  {
+   "failing_service": "svc-api-gateway",
+   "failing_test": "test-003",
+   "family": "flaky",
+   "hops": 2,
+   "incident": "inc-04",
+   "occurrence": 1,
+   "pattern": "a flaky test draws attention while the real regression is one hop upstream",
+   "root_cause_commit": "com-084",
+   "root_cause_service": "svc-notifications",
+   "tier": "medium",
+   "ts": 1781049600,
+   "why_path": [
+    "svc-api-gateway",
+    "svc-orders",
+    "svc-notifications"
+   ]
+  },
+  {
+   "failing_service": "svc-orders",
+   "failing_test": "test-008",
+   "family": "retry",
+   "hops": 0,
+   "incident": "inc-05",
+   "occurrence": 2,
+   "pattern": "retry policy change causes timeouts and duplicate requests",
+   "root_cause_commit": "com-100",
+   "root_cause_service": "svc-orders",
+   "tier": "easy",
+   "ts": 1782003600,
+   "why_path": [
+    "svc-orders"
+   ]
+  },
+  {
+   "failing_service": "svc-orders",
+   "failing_test": "test-008",
+   "family": "schema",
+   "hops": 2,
+   "incident": "inc-06",
+   "occurrence": 2,
+   "pattern": "schema migration upstream breaks a downstream consumer",
+   "root_cause_commit": "com-111",
+   "root_cause_service": "svc-ledger",
+   "tier": "medium",
+   "ts": 1782889200,
+   "why_path": [
+    "svc-orders",
+    "svc-payments",
+    "svc-ledger"
+   ]
+  },
+  {
+   "failing_service": "svc-billing",
+   "failing_test": "test-014",
+   "family": "config",
+   "hops": 2,
+   "incident": "inc-07",
+   "occurrence": 2,
+   "pattern": "config default change upstream shows up as latency in an unrelated service",
+   "root_cause_commit": "com-138",
+   "root_cause_service": "svc-fraud",
+   "tier": "hard",
+   "ts": 1784088000,
+   "why_path": [
+    "svc-billing",
+    "svc-payments",
+    "svc-fraud"
+   ]
+  },
+  {
+   "failing_service": "svc-orders",
+   "failing_test": "test-009",
+   "family": "flaky",
+   "hops": 2,
+   "incident": "inc-08",
+   "occurrence": 2,
+   "pattern": "a flaky test draws attention while the real regression is one hop upstream",
+   "root_cause_commit": "com-156",
+   "root_cause_service": "svc-user-profile",
+   "tier": "medium",
+   "ts": 1784854800,
+   "why_path": [
+    "svc-orders",
+    "svc-notifications",
+    "svc-user-profile"
+   ]
+  },
+  {
+   "failing_service": "svc-billing",
+   "failing_test": "test-014",
+   "family": "retry",
+   "hops": 0,
+   "incident": "inc-09",
+   "occurrence": 3,
+   "pattern": "retry policy change causes timeouts and duplicate requests",
+   "root_cause_commit": "com-179",
+   "root_cause_service": "svc-billing",
+   "tier": "easy",
+   "ts": 1786262400,
+   "why_path": [
+    "svc-billing"
+   ]
+  },
+  {
+   "failing_service": "svc-payments",
+   "failing_test": "test-010",
+   "family": "schema",
+   "hops": 2,
+   "incident": "inc-10",
+   "occurrence": 3,
+   "pattern": "schema migration upstream breaks a downstream consumer",
+   "root_cause_commit": "com-200",
+   "root_cause_service": "svc-user-profile",
+   "tier": "medium",
+   "ts": 1787209200,
+   "why_path": [
+    "svc-payments",
+    "svc-auth",
+    "svc-user-profile"
+   ]
+  },
+  {
+   "failing_service": "svc-api-gateway",
+   "failing_test": "test-002",
+   "family": "config",
+   "hops": 2,
+   "incident": "inc-11",
+   "occurrence": 3,
+   "pattern": "config default change upstream shows up as latency in an unrelated service",
+   "root_cause_commit": "com-229",
+   "root_cause_service": "svc-inventory",
+   "tier": "hard",
+   "ts": 1788318000,
+   "why_path": [
+    "svc-api-gateway",
+    "svc-orders",
+    "svc-inventory"
+   ]
+  },
+  {
+   "failing_service": "svc-billing",
+   "failing_test": "test-013",
+   "family": "flaky",
+   "hops": 2,
+   "incident": "inc-12",
+   "occurrence": 3,
+   "pattern": "a flaky test draws attention while the real regression is one hop upstream",
+   "root_cause_commit": "com-244",
+   "root_cause_service": "svc-auth",
+   "tier": "medium",
+   "ts": 1789196400,
+   "why_path": [
+    "svc-billing",
+    "svc-payments",
+    "svc-auth"
+   ]
+  }
+ ],
+ "seed": 42,
+ "tenant": "alpha"
+}

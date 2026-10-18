@@ -1,0 +1,39 @@
+{
+ "company": "Globex Logistics",
+ "incidents": [
+  {
+   "failing_service": "svc-routing",
+   "failing_test": "test-001",
+   "family": "retry",
+   "hops": 0,
+   "incident": "inc-01",
+   "occurrence": 1,
+   "pattern": "retry policy change causes timeouts and duplicate requests",
+   "root_cause_commit": "com-004",
+   "root_cause_service": "svc-routing",
+   "tier": "easy",
+   "ts": 1777964400,
+   "why_path": [
+    "svc-routing"
+   ]
+  },
+  {
+   "failing_service": "svc-tracking",
+   "failing_test": "test-004",
+   "family": "retry",
+   "hops": 0,
+   "incident": "inc-02",
+   "occurrence": 2,
+   "pattern": "retry policy change causes timeouts and duplicate requests",
+   "root_cause_commit": "com-018",
+   "root_cause_service": "svc-tracking",
+   "tier": "easy",
+   "ts": 1784181600,
+   "why_path": [
+    "svc-tracking"
+   ]
+  }
+ ],
+ "seed": 42,
+ "tenant": "beta"
+}

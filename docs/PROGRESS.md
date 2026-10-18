@@ -7,3 +7,4 @@ One line per commit.
 - schema: idempotent range + vector indexes per tenant graph, make schema
 - embed: deterministic hashed bag-of-words stand-in (384 dims)
 - data: seeded world generator (specs, generate.py, ground truth) with tests
+- seed: loader + make seed for tenant_alpha/tenant_beta, graph tests vs ground truth

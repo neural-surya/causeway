@@ -1,0 +1,2538 @@
+{
+ "company": "Globex Logistics",
+ "edges": [
+  {
+   "dst": [
+    "Team",
+    "team-logistics"
+   ],
+   "props": {
+    "valid_from": 1759190400
+   },
+   "rel": "MEMBER_OF",
+   "src": [
+    "Person",
+    "person-01"
+   ]
+  },
+  {
+   "dst": [
+    "Team",
+    "team-integrations"
+   ],
+   "props": {
+    "valid_from": 1759190400
+   },
+   "rel": "MEMBER_OF",
+   "src": [
+    "Person",
+    "person-02"
+   ]
+  },
+  {
+   "dst": [
+    "Team",
+    "team-logistics"
+   ],
+   "props": {
+    "valid_from": 1759190400
+   },
+   "rel": "MEMBER_OF",
+   "src": [
+    "Person",
+    "person-03"
+   ]
+  },
+  {
+   "dst": [
+    "Team",
+    "team-integrations"
+   ],
+   "props": {
+    "valid_from": 1759190400
+   },
+   "rel": "MEMBER_OF",
+   "src": [
+    "Person",
+    "person-04"
+   ]
+  },
+  {
+   "dst": [
+    "Team",
+    "team-logistics"
+   ],
+   "props": {
+    "valid_from": 1759190400
+   },
+   "rel": "MEMBER_OF",
+   "src": [
+    "Person",
+    "person-05"
+   ]
+  },
+  {
+   "dst": [
+    "Team",
+    "team-integrations"
+   ],
+   "props": {
+    "valid_from": 1759190400
+   },
+   "rel": "MEMBER_OF",
+   "src": [
+    "Person",
+    "person-06"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-routing"
+   ],
+   "props": {
+    "valid_from": 1759190400
+   },
+   "rel": "OWNS",
+   "src": [
+    "Team",
+    "team-logistics"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-tracking"
+   ],
+   "props": {
+    "valid_from": 1759190400
+   },
+   "rel": "OWNS",
+   "src": [
+    "Team",
+    "team-logistics"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-carrier-api"
+   ],
+   "props": {
+    "valid_from": 1759190400
+   },
+   "rel": "OWNS",
+   "src": [
+    "Team",
+    "team-integrations"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-warehouse-sync"
+   ],
+   "props": {
+    "valid_from": 1759190400
+   },
+   "rel": "OWNS",
+   "src": [
+    "Team",
+    "team-integrations"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-carrier-api"
+   ],
+   "props": {
+    "valid_from": 1759190400
+   },
+   "rel": "DEPENDS_ON",
+   "src": [
+    "Service",
+    "svc-tracking"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-carrier-api"
+   ],
+   "props": {
+    "valid_from": 1759190400
+   },
+   "rel": "DEPENDS_ON",
+   "src": [
+    "Service",
+    "svc-routing"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-warehouse-sync"
+   ],
+   "props": {
+    "valid_from": 1759190400
+   },
+   "rel": "DEPENDS_ON",
+   "src": [
+    "Service",
+    "svc-routing"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-routing"
+   ],
+   "props": {
+    "valid_from": 1776470400
+   },
+   "rel": "COVERS",
+   "src": [
+    "Test",
+    "test-001"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-routing"
+   ],
+   "props": {
+    "valid_from": 1776470400
+   },
+   "rel": "COVERS",
+   "src": [
+    "Test",
+    "test-002"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-routing"
+   ],
+   "props": {
+    "valid_from": 1776470400
+   },
+   "rel": "COVERS",
+   "src": [
+    "Test",
+    "test-003"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-tracking"
+   ],
+   "props": {
+    "valid_from": 1776470400
+   },
+   "rel": "COVERS",
+   "src": [
+    "Test",
+    "test-004"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-tracking"
+   ],
+   "props": {
+    "valid_from": 1776470400
+   },
+   "rel": "COVERS",
+   "src": [
+    "Test",
+    "test-005"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-tracking"
+   ],
+   "props": {
+    "valid_from": 1776470400
+   },
+   "rel": "COVERS",
+   "src": [
+    "Test",
+    "test-006"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-carrier-api"
+   ],
+   "props": {
+    "valid_from": 1776470400
+   },
+   "rel": "COVERS",
+   "src": [
+    "Test",
+    "test-007"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-carrier-api"
+   ],
+   "props": {
+    "valid_from": 1776470400
+   },
+   "rel": "COVERS",
+   "src": [
+    "Test",
+    "test-008"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-carrier-api"
+   ],
+   "props": {
+    "valid_from": 1776470400
+   },
+   "rel": "COVERS",
+   "src": [
+    "Test",
+    "test-009"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-warehouse-sync"
+   ],
+   "props": {
+    "valid_from": 1776470400
+   },
+   "rel": "COVERS",
+   "src": [
+    "Test",
+    "test-010"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-warehouse-sync"
+   ],
+   "props": {
+    "valid_from": 1776470400
+   },
+   "rel": "COVERS",
+   "src": [
+    "Test",
+    "test-011"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-warehouse-sync"
+   ],
+   "props": {
+    "valid_from": 1776470400
+   },
+   "rel": "COVERS",
+   "src": [
+    "Test",
+    "test-012"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-routing"
+   ],
+   "props": {
+    "valid_from": 1777964400
+   },
+   "rel": "AFFECTED",
+   "src": [
+    "Incident",
+    "inc-01"
+   ]
+  },
+  {
+   "dst": [
+    "Incident",
+    "inc-01"
+   ],
+   "props": {
+    "valid_from": 1777968000
+   },
+   "rel": "ABOUT",
+   "src": [
+    "Ticket",
+    "tkt-01"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-tracking"
+   ],
+   "props": {
+    "valid_from": 1784181600
+   },
+   "rel": "AFFECTED",
+   "src": [
+    "Incident",
+    "inc-02"
+   ]
+  },
+  {
+   "dst": [
+    "Incident",
+    "inc-02"
+   ],
+   "props": {
+    "valid_from": 1784185200
+   },
+   "rel": "ABOUT",
+   "src": [
+    "Ticket",
+    "tkt-02"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-01"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-001"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-routing"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-001"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-02"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-002"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-warehouse-sync"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-002"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-04"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-003"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-warehouse-sync"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-003"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-03"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-004"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-routing"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-004"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-03"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-005"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-tracking"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-005"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-04"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-006"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-warehouse-sync"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-006"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-04"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-007"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-warehouse-sync"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-007"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-06"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-008"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-carrier-api"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-008"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-04"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-009"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-carrier-api"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-009"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-05"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-010"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-routing"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-010"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-04"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-011"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-warehouse-sync"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-011"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-06"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-012"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-carrier-api"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-012"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-02"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-013"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-warehouse-sync"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-013"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-02"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-014"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-warehouse-sync"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-014"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-03"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-015"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-tracking"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-015"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-01"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-016"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-tracking"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-016"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-06"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-017"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-carrier-api"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-017"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-03"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-018"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-tracking"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-018"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-02"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-019"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-carrier-api"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-019"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-01"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-020"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-routing"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-020"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-06"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-021"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-warehouse-sync"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-021"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-03"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-022"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-tracking"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-022"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-03"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-023"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-tracking"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-023"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-05"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-024"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-routing"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-024"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-01"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-025"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-tracking"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-025"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-01"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-026"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-routing"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-026"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-05"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-027"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-tracking"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-027"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-05"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-028"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-carrier-api"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-028"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-04"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-029"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-carrier-api"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-029"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-03"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-030"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-routing"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-030"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-06"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-031"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-carrier-api"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-031"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-01"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-032"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-routing"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-032"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-05"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-033"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-tracking"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-033"
+   ]
+  },
+  {
+   "dst": [
+    "Person",
+    "person-05"
+   ],
+   "props": {},
+   "rel": "AUTHORED_BY",
+   "src": [
+    "Commit",
+    "com-034"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-routing"
+   ],
+   "props": {},
+   "rel": "MODIFIED",
+   "src": [
+    "Commit",
+    "com-034"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-001"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-001"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-002"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-002"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-003"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-002"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-004"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-003"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-005"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-004"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-006"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-005"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-007"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-006"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-008"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-007"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-009"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-008"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-010"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-009"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-011"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-010"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-012"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-011"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-013"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-010"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-014"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-012"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-015"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-013"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-016"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-014"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-017"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-015"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-018"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-016"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-019"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-015"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-020"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-009"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-021"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-017"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-022"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-018"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-023"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-019"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-024"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-020"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-025"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-021"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-026"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-020"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-027"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-021"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-028"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-022"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-029"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-023"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-030"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-024"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-031"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-025"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-032"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-024"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-033"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-026"
+   ]
+  },
+  {
+   "dst": [
+    "Commit",
+    "com-034"
+   ],
+   "props": {},
+   "rel": "CONTAINS",
+   "src": [
+    "PR",
+    "pr-027"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-routing"
+   ],
+   "props": {
+    "valid_from": 1776928533,
+    "weight": 4
+   },
+   "rel": "KNOWS_ABOUT",
+   "src": [
+    "Person",
+    "person-01"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-warehouse-sync"
+   ],
+   "props": {
+    "valid_from": 1777336911,
+    "weight": 3
+   },
+   "rel": "KNOWS_ABOUT",
+   "src": [
+    "Person",
+    "person-02"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-tracking"
+   ],
+   "props": {
+    "valid_from": 1778042187,
+    "weight": 5
+   },
+   "rel": "KNOWS_ABOUT",
+   "src": [
+    "Person",
+    "person-03"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-warehouse-sync"
+   ],
+   "props": {
+    "valid_from": 1777897774,
+    "weight": 4
+   },
+   "rel": "KNOWS_ABOUT",
+   "src": [
+    "Person",
+    "person-04"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-routing"
+   ],
+   "props": {
+    "valid_from": 1781082784,
+    "weight": 3
+   },
+   "rel": "KNOWS_ABOUT",
+   "src": [
+    "Person",
+    "person-05"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-carrier-api"
+   ],
+   "props": {
+    "valid_from": 1779803997,
+    "weight": 4
+   },
+   "rel": "KNOWS_ABOUT",
+   "src": [
+    "Person",
+    "person-06"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-routing"
+   ],
+   "props": {
+    "valid_from": 1776470400
+   },
+   "rel": "DESCRIBES",
+   "src": [
+    "Doc",
+    "doc-001"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-tracking"
+   ],
+   "props": {
+    "valid_from": 1776470400
+   },
+   "rel": "DESCRIBES",
+   "src": [
+    "Doc",
+    "doc-002"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-carrier-api"
+   ],
+   "props": {
+    "valid_from": 1776470400
+   },
+   "rel": "DESCRIBES",
+   "src": [
+    "Doc",
+    "doc-003"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-warehouse-sync"
+   ],
+   "props": {
+    "valid_from": 1776470400
+   },
+   "rel": "DESCRIBES",
+   "src": [
+    "Doc",
+    "doc-004"
+   ]
+  },
+  {
+   "dst": [
+    "Doc",
+    "doc-005"
+   ],
+   "props": {
+    "valid_from": 1774742400
+   },
+   "rel": "DECIDED_IN",
+   "src": [
+    "Decision",
+    "dec-01"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-carrier-api"
+   ],
+   "props": {
+    "valid_from": 1774742400
+   },
+   "rel": "CONCERNS",
+   "src": [
+    "Decision",
+    "dec-01"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-carrier-api"
+   ],
+   "props": {
+    "valid_from": 1774742400
+   },
+   "rel": "DESCRIBES",
+   "src": [
+    "Doc",
+    "doc-005"
+   ]
+  },
+  {
+   "dst": [
+    "Doc",
+    "doc-006"
+   ],
+   "props": {
+    "valid_from": 1784246400
+   },
+   "rel": "DECIDED_IN",
+   "src": [
+    "Decision",
+    "dec-02"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-carrier-api"
+   ],
+   "props": {
+    "valid_from": 1784246400
+   },
+   "rel": "CONCERNS",
+   "src": [
+    "Decision",
+    "dec-02"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-carrier-api"
+   ],
+   "props": {
+    "valid_from": 1784246400
+   },
+   "rel": "DESCRIBES",
+   "src": [
+    "Doc",
+    "doc-006"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-tracking"
+   ],
+   "props": {
+    "valid_from": 1784246400
+   },
+   "rel": "CONCERNS",
+   "src": [
+    "Decision",
+    "dec-02"
+   ]
+  },
+  {
+   "dst": [
+    "Service",
+    "svc-tracking"
+   ],
+   "props": {
+    "valid_from": 1784246400
+   },
+   "rel": "DESCRIBES",
+   "src": [
+    "Doc",
+    "doc-006"
+   ]
+  },
+  {
+   "dst": [
+    "Decision",
+    "dec-01"
+   ],
+   "props": {
+    "valid_from": 1784246400
+   },
+   "rel": "SUPERSEDES",
+   "src": [
+    "Decision",
+    "dec-02"
+   ]
+  }
+ ],
+ "nodes": {
+  "Commit": [
+   {
+    "id": "com-001",
+    "msg": "chore: upgrade dependencies in routing",
+    "sha": "e495b0e6e6",
+    "ts": 1776928533
+   },
+   {
+    "id": "com-002",
+    "msg": "refactor: extract helper in warehouse-sync",
+    "sha": "9166c47d98",
+    "ts": 1777336911
+   },
+   {
+    "id": "com-003",
+    "msg": "test: add coverage for warehouse-sync edge cases",
+    "sha": "c9ad48fe12",
+    "ts": 1777897774
+   },
+   {
+    "id": "com-004",
+    "msg": "feat: retry failed calls up to 5 times with no backoff in routing",
+    "sha": "cc3b68444e",
+    "ts": 1777906800
+   },
+   {
+    "id": "com-005",
+    "msg": "refactor: extract helper in tracking",
+    "sha": "4089346d18",
+    "ts": 1778042187
+   },
+   {
+    "id": "com-006",
+    "msg": "docs: update warehouse-sync runbook",
+    "sha": "1305a89a3a",
+    "ts": 1778749723
+   },
+   {
+    "id": "com-007",
+    "msg": "chore: upgrade dependencies in warehouse-sync",
+    "sha": "2158de46bc",
+    "ts": 1779416248
+   },
+   {
+    "id": "com-008",
+    "msg": "chore: bump logging in carrier-api",
+    "sha": "0574d51718",
+    "ts": 1779803997
+   },
+   {
+    "id": "com-009",
+    "msg": "refactor: simplify carrier-api request handler",
+    "sha": "9f87a2c13f",
+    "ts": 1780215953
+   },
+   {
+    "id": "com-010",
+    "msg": "fix: handle empty payload in routing",
+    "sha": "b761a02528",
+    "ts": 1781082784
+   },
+   {
+    "id": "com-011",
+    "msg": "chore: bump logging in warehouse-sync",
+    "sha": "54d4b32b97",
+    "ts": 1781360150
+   },
+   {
+    "id": "com-012",
+    "msg": "fix: handle empty payload in carrier-api",
+    "sha": "138757f36d",
+    "ts": 1782072840
+   },
+   {
+    "id": "com-013",
+    "msg": "fix: typo in warehouse-sync error message",
+    "sha": "2854b4dcfe",
+    "ts": 1782164874
+   },
+   {
+    "id": "com-014",
+    "msg": "fix: typo in warehouse-sync error message",
+    "sha": "74d3a0211e",
+    "ts": 1782701306
+   },
+   {
+    "id": "com-015",
+    "msg": "test: add coverage for tracking edge cases",
+    "sha": "e69d45d014",
+    "ts": 1782911772
+   },
+   {
+    "id": "com-016",
+    "msg": "refactor: simplify tracking request handler",
+    "sha": "33e06a8993",
+    "ts": 1782951718
+   },
+   {
+    "id": "com-017",
+    "msg": "fix: typo in carrier-api error message",
+    "sha": "3927082151",
+    "ts": 1783513935
+   },
+   {
+    "id": "com-018",
+    "msg": "feat: retry failed calls up to 5 times with no backoff in tracking",
+    "sha": "7c82893a90",
+    "ts": 1784134800
+   },
+   {
+    "id": "com-019",
+    "msg": "fix: typo in carrier-api error message",
+    "sha": "1b8575fd45",
+    "ts": 1784656831
+   },
+   {
+    "id": "com-020",
+    "msg": "fix: handle empty payload in routing",
+    "sha": "0d87e37f99",
+    "ts": 1785738184
+   },
+   {
+    "id": "com-021",
+    "msg": "refactor: extract helper in warehouse-sync",
+    "sha": "d4912a864c",
+    "ts": 1786531373
+   },
+   {
+    "id": "com-022",
+    "msg": "fix: typo in tracking error message",
+    "sha": "2db4935788",
+    "ts": 1786630230
+   },
+   {
+    "id": "com-023",
+    "msg": "fix: handle empty payload in tracking",
+    "sha": "718171b02a",
+    "ts": 1786974181
+   },
+   {
+    "id": "com-024",
+    "msg": "chore: upgrade dependencies in routing",
+    "sha": "b296156adf",
+    "ts": 1787939466
+   },
+   {
+    "id": "com-025",
+    "msg": "fix: handle empty payload in tracking",
+    "sha": "af90dd25f2",
+    "ts": 1788572295
+   },
+   {
+    "id": "com-026",
+    "msg": "fix: typo in routing error message",
+    "sha": "149fbe0f6a",
+    "ts": 1788579441
+   },
+   {
+    "id": "com-027",
+    "msg": "test: add coverage for tracking edge cases",
+    "sha": "853de4d85f",
+    "ts": 1789118328
+   },
+   {
+    "id": "com-028",
+    "msg": "chore: bump logging in carrier-api",
+    "sha": "add181d173",
+    "ts": 1789489726
+   },
+   {
+    "id": "com-029",
+    "msg": "docs: update carrier-api runbook",
+    "sha": "7d03dca0ee",
+    "ts": 1789799827
+   },
+   {
+    "id": "com-030",
+    "msg": "perf: cache lookups in routing",
+    "sha": "70fd4dd745",
+    "ts": 1790460382
+   },
+   {
+    "id": "com-031",
+    "msg": "chore: upgrade dependencies in carrier-api",
+    "sha": "87111f777f",
+    "ts": 1790573668
+   },
+   {
+    "id": "com-032",
+    "msg": "chore: upgrade dependencies in routing",
+    "sha": "3a85cc97fb",
+    "ts": 1791131524
+   },
+   {
+    "id": "com-033",
+    "msg": "feat: add metrics to tracking",
+    "sha": "e29383568f",
+    "ts": 1791229341
+   },
+   {
+    "id": "com-034",
+    "msg": "perf: cache lookups in routing",
+    "sha": "9d1577edc9",
+    "ts": 1791497709
+   }
+  ],
+  "Decision": [
+   {
+    "id": "dec-01",
+    "status": "superseded",
+    "title": "Poll carriers every 30 seconds",
+    "ts": 1774742400
+   },
+   {
+    "id": "dec-02",
+    "status": "active",
+    "title": "Subscribe to carrier webhooks instead of polling",
+    "ts": 1784246400
+   }
+  ],
+  "Doc": [
+   {
+    "body": "Runbook for routing, owned by team logistics. Calls carrier-api, warehouse-sync. On alert check recent deploys and upstream health.",
+    "id": "doc-001",
+    "kind": "runbook",
+    "title": "routing runbook"
+   },
+   {
+    "body": "Runbook for tracking, owned by team logistics. Calls carrier-api. On alert check recent deploys and upstream health.",
+    "id": "doc-002",
+    "kind": "runbook",
+    "title": "tracking runbook"
+   },
+   {
+    "body": "Runbook for carrier-api, owned by team integrations. Calls no services. On alert check recent deploys and upstream health.",
+    "id": "doc-003",
+    "kind": "runbook",
+    "title": "carrier-api runbook"
+   },
+   {
+    "body": "Runbook for warehouse-sync, owned by team integrations. Calls no services. On alert check recent deploys and upstream health.",
+    "id": "doc-004",
+    "kind": "runbook",
+    "title": "warehouse-sync runbook"
+   },
+   {
+    "body": "Carrier status is polled every 30 seconds.",
+    "id": "doc-005",
+    "kind": "adr",
+    "title": "ADR: Poll carriers every 30 seconds"
+   },
+   {
+    "body": "Webhooks cut load and latency; polling remains only as a fallback.",
+    "id": "doc-006",
+    "kind": "adr",
+    "title": "ADR: Subscribe to carrier webhooks instead of polling"
+   }
+  ],
+  "Incident": [
+   {
+    "id": "inc-01",
+    "resolved_ts": 1777978800,
+    "sev": "sev2",
+    "summary": "Elevated timeouts and duplicate requests in routing; test_routing_idempotency is failing",
+    "title": "routing: Elevated timeouts and duplicate requests in routing",
+    "ts": 1777964400
+   },
+   {
+    "id": "inc-02",
+    "resolved_ts": 1784196000,
+    "sev": "sev3",
+    "summary": "Elevated timeouts and duplicate requests in tracking; test_tracking_timeouts is failing",
+    "title": "tracking: Elevated timeouts and duplicate requests in tracking",
+    "ts": 1784181600
+   }
+  ],
+  "PR": [
+   {
+    "id": "pr-001",
+    "title": "chore: upgrade dependencies in routing",
+    "ts": 1776932133
+   },
+   {
+    "id": "pr-002",
+    "title": "refactor: extract helper in warehouse-sync",
+    "ts": 1777340511
+   },
+   {
+    "id": "pr-003",
+    "title": "feat: retry failed calls up to 5 times with no backoff in routing",
+    "ts": 1777910400
+   },
+   {
+    "id": "pr-004",
+    "title": "refactor: extract helper in tracking",
+    "ts": 1778045787
+   },
+   {
+    "id": "pr-005",
+    "title": "docs: update warehouse-sync runbook",
+    "ts": 1778753323
+   },
+   {
+    "id": "pr-006",
+    "title": "chore: upgrade dependencies in warehouse-sync",
+    "ts": 1779419848
+   },
+   {
+    "id": "pr-007",
+    "title": "chore: bump logging in carrier-api",
+    "ts": 1779807597
+   },
+   {
+    "id": "pr-008",
+    "title": "refactor: simplify carrier-api request handler",
+    "ts": 1780219553
+   },
+   {
+    "id": "pr-009",
+    "title": "fix: handle empty payload in routing",
+    "ts": 1781086384
+   },
+   {
+    "id": "pr-010",
+    "title": "chore: bump logging in warehouse-sync",
+    "ts": 1781363750
+   },
+   {
+    "id": "pr-011",
+    "title": "fix: handle empty payload in carrier-api",
+    "ts": 1782076440
+   },
+   {
+    "id": "pr-012",
+    "title": "fix: typo in warehouse-sync error message",
+    "ts": 1782704906
+   },
+   {
+    "id": "pr-013",
+    "title": "test: add coverage for tracking edge cases",
+    "ts": 1782915372
+   },
+   {
+    "id": "pr-014",
+    "title": "refactor: simplify tracking request handler",
+    "ts": 1782955318
+   },
+   {
+    "id": "pr-015",
+    "title": "fix: typo in carrier-api error message",
+    "ts": 1783517535
+   },
+   {
+    "id": "pr-016",
+    "title": "feat: retry failed calls up to 5 times with no backoff in tracking",
+    "ts": 1784138400
+   },
+   {
+    "id": "pr-017",
+    "title": "refactor: extract helper in warehouse-sync",
+    "ts": 1786534973
+   },
+   {
+    "id": "pr-018",
+    "title": "fix: typo in tracking error message",
+    "ts": 1786633830
+   },
+   {
+    "id": "pr-019",
+    "title": "fix: handle empty payload in tracking",
+    "ts": 1786977781
+   },
+   {
+    "id": "pr-020",
+    "title": "chore: upgrade dependencies in routing",
+    "ts": 1787943066
+   },
+   {
+    "id": "pr-021",
+    "title": "fix: handle empty payload in tracking",
+    "ts": 1788575895
+   },
+   {
+    "id": "pr-022",
+    "title": "chore: bump logging in carrier-api",
+    "ts": 1789493326
+   },
+   {
+    "id": "pr-023",
+    "title": "docs: update carrier-api runbook",
+    "ts": 1789803427
+   },
+   {
+    "id": "pr-024",
+    "title": "perf: cache lookups in routing",
+    "ts": 1790463982
+   },
+   {
+    "id": "pr-025",
+    "title": "chore: upgrade dependencies in carrier-api",
+    "ts": 1790577268
+   },
+   {
+    "id": "pr-026",
+    "title": "feat: add metrics to tracking",
+    "ts": 1791232941
+   },
+   {
+    "id": "pr-027",
+    "title": "perf: cache lookups in routing",
+    "ts": 1791501309
+   }
+  ],
+  "Person": [
+   {
+    "id": "person-01",
+    "name": "Zara Quinn",
+    "role": "manager"
+   },
+   {
+    "id": "person-02",
+    "name": "Yusuf Demir",
+    "role": "manager"
+   },
+   {
+    "id": "person-03",
+    "name": "Xavier Reyes",
+    "role": "engineer"
+   },
+   {
+    "id": "person-04",
+    "name": "Wanda Lee",
+    "role": "senior engineer"
+   },
+   {
+    "id": "person-05",
+    "name": "Viktor Hahn",
+    "role": "engineer"
+   },
+   {
+    "id": "person-06",
+    "name": "Uma Shah",
+    "role": "engineer"
+   }
+  ],
+  "Service": [
+   {
+    "id": "svc-routing",
+    "name": "routing",
+    "tier": "tier1"
+   },
+   {
+    "id": "svc-tracking",
+    "name": "tracking",
+    "tier": "tier2"
+   },
+   {
+    "id": "svc-carrier-api",
+    "name": "carrier-api",
+    "tier": "tier1"
+   },
+   {
+    "id": "svc-warehouse-sync",
+    "name": "warehouse-sync",
+    "tier": "tier2"
+   }
+  ],
+  "Team": [
+   {
+    "id": "team-logistics",
+    "name": "logistics"
+   },
+   {
+    "id": "team-integrations",
+    "name": "integrations"
+   }
+  ],
+  "Test": [
+   {
+    "flaky_score": 0.03,
+    "id": "test-001",
+    "name": "test_routing_idempotency"
+   },
+   {
+    "flaky_score": 0.05,
+    "id": "test-002",
+    "name": "test_routing_timeouts"
+   },
+   {
+    "flaky_score": 0.36,
+    "id": "test-003",
+    "name": "test_routing_auth_failure"
+   },
+   {
+    "flaky_score": 0.01,
+    "id": "test-004",
+    "name": "test_tracking_timeouts"
+   },
+   {
+    "flaky_score": 0.02,
+    "id": "test-005",
+    "name": "test_tracking_auth_failure"
+   },
+   {
+    "flaky_score": 0.39,
+    "id": "test-006",
+    "name": "test_tracking_happy_path"
+   },
+   {
+    "flaky_score": 0.04,
+    "id": "test-007",
+    "name": "test_carrier_api_idempotency"
+   },
+   {
+    "flaky_score": 0.02,
+    "id": "test-008",
+    "name": "test_carrier_api_bulk_load"
+   },
+   {
+    "flaky_score": 0.32,
+    "id": "test-009",
+    "name": "test_carrier_api_auth_failure"
+   },
+   {
+    "flaky_score": 0.04,
+    "id": "test-010",
+    "name": "test_warehouse_sync_idempotency"
+   },
+   {
+    "flaky_score": 0.44,
+    "id": "test-011",
+    "name": "test_warehouse_sync_timeouts"
+   },
+   {
+    "flaky_score": 0.02,
+    "id": "test-012",
+    "name": "test_warehouse_sync_auth_failure"
+   }
+  ],
+  "Thread": [
+   {
+    "channel": "#incidents",
+    "id": "thr-inc-01",
+    "text": "Elevated timeouts and duplicate requests in routing; test_routing_idempotency is failing. Rolling back is not obvious. Who has context on routing?",
+    "ts": 1777965000
+   },
+   {
+    "channel": "#incidents",
+    "id": "thr-inc-02",
+    "text": "Elevated timeouts and duplicate requests in tracking; test_tracking_timeouts is failing. Rolling back is not obvious. Who has context on tracking?",
+    "ts": 1784182200
+   },
+   {
+    "channel": "#logistics",
+    "id": "thr-gen-01",
+    "text": "Anyone reviewed the latest change to routing?",
+    "ts": 1785127297
+   },
+   {
+    "channel": "#logistics",
+    "id": "thr-gen-02",
+    "text": "Is the routing runbook still accurate?",
+    "ts": 1784179439
+   },
+   {
+    "channel": "#logistics",
+    "id": "thr-gen-03",
+    "text": "Anyone reviewed the latest change to tracking?",
+    "ts": 1787521548
+   },
+   {
+    "channel": "#logistics",
+    "id": "thr-gen-04",
+    "text": "Is the tracking runbook still accurate?",
+    "ts": 1776608938
+   },
+   {
+    "channel": "#logistics",
+    "id": "thr-gen-05",
+    "text": "Heads up: deploying routing after lunch.",
+    "ts": 1777880906
+   },
+   {
+    "channel": "#integrations",
+    "id": "thr-gen-06",
+    "text": "Why do we retry in warehouse-sync the way we do?",
+    "ts": 1788652501
+   },
+   {
+    "channel": "#logistics",
+    "id": "thr-gen-07",
+    "text": "Anyone reviewed the latest change to routing?",
+    "ts": 1788625350
+   },
+   {
+    "channel": "#integrations",
+    "id": "thr-gen-08",
+    "text": "Why do we retry in carrier-api the way we do?",
+    "ts": 1790388048
+   },
+   {
+    "channel": "#integrations",
+    "id": "thr-gen-09",
+    "text": "Anyone reviewed the latest change to carrier-api?",
+    "ts": 1790071875
+   },
+   {
+    "channel": "#logistics",
+    "id": "thr-gen-10",
+    "text": "Is the tracking runbook still accurate?",
+    "ts": 1787485813
+   }
+  ],
+  "Ticket": [
+   {
+    "id": "tkt-01",
+    "status": "closed",
+    "title": "Elevated timeouts and duplicate requests in routing",
+    "ts": 1777968000
+   },
+   {
+    "id": "tkt-02",
+    "status": "closed",
+    "title": "Elevated timeouts and duplicate requests in tracking",
+    "ts": 1784185200
+   }
+  ]
+ },
+ "seed": 42,
+ "tenant": "beta"
+}

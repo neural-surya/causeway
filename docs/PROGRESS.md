@@ -26,3 +26,4 @@ One line per commit.
 - api+ui: FastAPI endpoints, single page with chat stream and Cytoscape why-path, make demo
 - mcp: MCP server exposing 9 tools with evidence paths, tenant bound by env
 - docs: README, GRAPH_MODEL, AI_DISCLOSURE, design notes
+- docs/TASKS.md: final status

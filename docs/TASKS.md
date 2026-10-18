@@ -22,8 +22,8 @@ Deadline: Oct 18, 2026, 11:29 AM PDT. Status: [x] done, [ ] todo.
 ## Day 2: Tools, Track 3, Track 1
 - [x] 2.1 MCP server with read tools and ToolCall audit trail
 - [x] 2.2 Path verifier + test_path_faithfulness
-- [ ] 2.3 Combined agent loop (graph agents, no memory) scored on all incidents
-- [ ] 2.4 Company-brain Q&A with cited paths
+- [x] 2.3 Graph agents (no memory) scored on all incidents (deterministic agents, no LLM)
+- [ ] 2.4 Company-brain Q&A with cited paths (not done: who_knows/decision_trace exist as tools, no Q&A mode)
 
 ## Day 3: Memory and coordination
 - [x] 3.1 remember_episode + recall
@@ -34,12 +34,12 @@ Deadline: Oct 18, 2026, 11:29 AM PDT. Status: [x] done, [ ] todo.
 
 ## Day 4: UI and polish
 - [x] 4.1 Static page: chat stream + Cytoscape why-path
-- [ ] 4.2 Fix worst eval misses
+- [ ] 4.2 Fix worst eval misses (not done: weights deliberately not tuned)
 - [x] 4.3 Full eval, auto-generated docs/RESULTS.md
-- [ ] 4.4 README: graph model, Cypher list, results table
+- [x] 4.4 README: graph model, Cypher list, results table
 
 ## Day 5: Ship
-- [ ] 5.1 `make demo` verified from a clean clone
+- [x] 5.1 `make demo` verified from a clean clone
 - [ ] 5.2 Demo video (3 min max)
 - [ ] 5.3 Public repo, final AI_DISCLOSURE.md
 - [ ] 5.4 Submit with all three tracks
